@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form style="width: 210px">
+    <h2>Dictionary</h2>
+    <input style="width: 300px" type="text" id="ChangeVIE" placeholder="Nhap..." ><br>
+    <hr>
+    <button type="button" onclick="check_TV()">Click</button>
+</form>
+<script>
+    function check_TV() {
+        let arrVie = ["1", "2", "3", "4"];
+        let arrEng = ["one", "two", "three", "four"];
+        let search = document.getElementById("ChangeVIE").value;
+        for (let i = 0; i < arrVie.length; i++) {
+            if(search==arrVie[i]){
+                alert(arrEng[i]);
+                break;
+            }else {
+                alert('không tìm thấy');
+                break;
+            }
+
+        }
+    }
+</script>
+
+</body>
+</html>
