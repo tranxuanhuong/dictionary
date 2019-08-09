@@ -10,23 +10,30 @@
     <h2>Dictionary</h2>
     <input style="width: 300px" type="text" id="ChangeVIE" placeholder="Nhap..." ><br>
     <hr>
-    <button type="button" onclick="check_TV()">Click</button>
+    <button type="button" onclick="converseEnglishToVN()">Click</button>
 </form>
 <script>
-    function check_TV() {
-        let arrVie = ["1", "2", "3", "4"];
-        let arrEng = ["one", "two", "three", "four"];
+    function converseEnglishToVN() {
+        let arrVie = ["1", "2", "3", "4","5"];
+        let arrEng = ["one", "two", "three", "four","five"];
         let search = document.getElementById("ChangeVIE").value;
-        for (let i = 0; i < arrVie.length; i++) {
-            if(search==arrVie[i]){
-                alert(arrEng[i]);
-                break;
-            }else {
-                alert('không tìm thấy');
-                break;
-            }
 
+        let index = findEn(search, arrEng);
+        if (index != -1) {
+            alert(arrVie[index]);
+        } else {
+            alert("khong tim thay");
         }
+    }
+
+    function findEn(keyword, arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (keyword == arr[i]) {
+                return i;
+            }
+        }
+
+        return  -1;
     }
 </script>
 
